@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhsawpyf68j3l"]
 
 [ext_resource type="Script" uid="uid://crrhob3j3vrjk" path="res://Scenes/floater.gd" id="1_6bsxh"]
-[ext_resource type="PackedScene" uid="uid://c05d1n3tliet5" path="res://Scenes/head.tscn" id="1_ockhe"]
+[ext_resource type="PackedScene" uid="uid://c05d1n3tliet5" path="res://Scenes/Dog_Head.tscn" id="1_ockhe"]
 
 [node name="Scene Root" type="Node2D"]
 
@@ -9,7 +9,7 @@
 anchor_mode = 0
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(582, 370)
+position = Vector2(722, 211)
 script = ExtResource("1_6bsxh")
 float_speed = 3.0
 float_radius = 10.0

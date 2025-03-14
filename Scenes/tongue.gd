@@ -30,11 +30,15 @@ func _process(_delta):
 			scale_tween.kill()
 		rotate(get_angle_to(get_global_mouse_position())-PI/2)
 		position_difference = global_position - get_global_mouse_position()
-		scale.y = (global_position.distance_to(get_global_mouse_position())) / $Sprite.texture.get_height()
+		scale.y = (global_position.distance_to(get_global_mouse_position())) / ($Sprite.texture.get_height()-$Sprite.offset.y)
 	elif Input.is_action_just_released("left_click"):
 		rotation_tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		scale_tween = get_tree().create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 		rotation_tween.tween_property(self, 'rotation', initial_rotation, 2)
 		scale_tween.tween_property(self,'scale', initial_scale, 1)
 
-		# scale.y = lerp(scale.y, initial_scale.y, .1)
+	if scale.y > initial_scale.y*3:
+		$"../Head".play("Angry")
+	else:
+		$"../Head".play("Happy")
+	
