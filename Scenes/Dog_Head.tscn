@@ -46,12 +46,12 @@ animations = [{
 [node name="Tongue_Puller" type="Node2D"]
 
 [node name="Tongue" type="Node2D" parent="."]
-position = Vector2(8, -8)
+position = Vector2(8, -25)
 script = ExtResource("1_x4cii")
 
 [node name="Sprite" type="Sprite2D" parent="Tongue"]
-position = Vector2(1.00003, 23)
-scale = Vector2(1, 1.4)
+position = Vector2(1.00003, 29.5)
+scale = Vector2(1, 1.14)
 texture = ExtResource("2_nfxfi")
 
 [node name="Area2D" type="Area2D" parent="Tongue"]
