@@ -19,7 +19,7 @@ func _on_area_2d_mouse_exited() -> void:
 	has_mouse = false
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	#if Input.is_action_just_pressed('left_click'):
 		#initial_offset = get_global_mouse_position() - global_position
 		#print(global_rotation)
