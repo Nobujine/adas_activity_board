@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhsawpyf68j3l"]
+
+[ext_resource type="PackedScene" uid="uid://c05d1n3tliet5" path="res://Scenes/head.tscn" id="1_ockhe"]
+
+[node name="Scene Root" type="Node2D"]
+
+[node name="Head" parent="." instance=ExtResource("1_ockhe")]
+position = Vector2(534, 413)
+
+[node name="Head2" parent="." instance=ExtResource("1_ockhe")]
+position = Vector2(868, 415)
+
+[node name="Head2" parent="Head2" instance=ExtResource("1_ockhe")]
+position = Vector2(-710, -18)

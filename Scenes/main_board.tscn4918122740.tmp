@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://dhsawpyf68j3l"]
+
+[ext_resource type="Texture2D" uid="uid://dafu8glmbpoq3" path="res://Assets/Lian Art Assets/angrydog - spacing fixed.png" id="1_ockhe"]
+[ext_resource type="Texture2D" uid="uid://c3gcpsin54y5s" path="res://Assets/Tongue.png" id="1_y7j1t"]
+[ext_resource type="Script" uid="uid://lb64o4v018v1" path="res://Scenes/tongue.gd" id="2_y7j1t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7j1t"]
+radius = 28.0713
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y7j1t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bsxh"]
+atlas = ExtResource("1_ockhe")
+region = Rect2(0, 0, 710, 506)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7j1t"]
+atlas = ExtResource("1_ockhe")
+region = Rect2(710, 0, 710, 506)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7eij"]
+atlas = ExtResource("1_ockhe")
+region = Rect2(1420, 0, 710, 506)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njf4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bsxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7j1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7eij")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Scene Root" type="Node2D"]
+
+[node name="Head" type="Node2D" parent="."]
+
+[node name="Tongue" type="Sprite2D" parent="Head"]
+position = Vector2(360, 450)
+rotation = 3.14159
+scale = Vector2(1.60313, -2.05959)
+texture = ExtResource("1_y7j1t")
+script = ExtResource("2_y7j1t")
+
+[node name="Area2D" type="Area2D" parent="Head/Tongue"]
+position = Vector2(224.561, -218.49)
+rotation = 3.14159
+scale = Vector2(0.62378, -0.485532)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Tongue/Area2D"]
+position = Vector2(360, 483)
+shape = SubResource("CircleShape2D_y7j1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Head/Tongue/Area2D/CollisionShape2D"]
+position = Vector2(2.49999, 1.09673e-05)
+scale = Vector2(61, 56)
+texture = SubResource("PlaceholderTexture2D_y7j1t")
+
+[node name="Head" type="AnimatedSprite2D" parent="Head"]
+position = Vector2(476.065, 332.5)
+scale = Vector2(0.456522, 0.456522)
+sprite_frames = SubResource("SpriteFrames_njf4n")
+
+[connection signal="mouse_entered" from="Head/Tongue/Area2D" to="Head/Tongue" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Head/Tongue/Area2D" to="Head/Tongue" method="_on_area_2d_mouse_exited"]
