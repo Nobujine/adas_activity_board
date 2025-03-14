@@ -11,7 +11,7 @@ func _ready() -> void:
 	handle_floating()
 	
 func handle_floating():
-	print('floating')
+	#print('floating')
 	tween = get_tree().create_tween().set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(self, "position",  generate_float_position(), float_speed)
 	tween.tween_callback(handle_floating)
