@@ -1,3 +1,0 @@
-extends CollisionShape2D
-
-export global_position
